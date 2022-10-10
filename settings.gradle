@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Android Template"
 include ':app'
 include ':feature:login'
+include ':common-ui'
