@@ -21,12 +21,7 @@ class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
-      AndroidTemplateTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-          MainScreen("Android")
-        }
-      }
+      MainScreen("Android")
     }
   }
 }
@@ -35,13 +30,16 @@ class MainActivity : ComponentActivity() {
 fun MainScreen(name: String) {
   val viewModel: MainViewModel = hiltViewModel()
   val state by viewModel.greeting.collectAsState()
-  Text(text = "$state $name!")
+  AndroidTemplateTheme {
+    // A surface container using the 'background' color from the theme
+    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+      Text(text = "$state $name!")
+    }
+  }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-  AndroidTemplateTheme {
-    MainScreen("Android")
-  }
+  MainScreen("Android")
 }
