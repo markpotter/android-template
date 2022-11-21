@@ -1,4 +1,4 @@
-package com.noumenon.template.ui.theme
+package com.noumenon.common.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

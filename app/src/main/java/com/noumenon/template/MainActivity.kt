@@ -13,7 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.noumenon.common.ui.preview.ThemeGroupPreviews
-import com.noumenon.template.ui.theme.AndroidTemplateTheme
+import com.noumenon.common.ui.theme.AndroidTemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

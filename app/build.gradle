@@ -62,8 +62,9 @@ dependencies {
   // Dagger/Hilt
   implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
   implementation "com.google.dagger:hilt-android:2.44"
-  implementation project(path: ':common-ui')
   kapt "com.google.dagger:hilt-compiler:2.44"
+  // Project Modules
+  implementation project(path: ':common-ui')
   // Test
   testImplementation 'junit:junit:4.13.2'
   androidTestImplementation 'androidx.test.ext:junit:1.1.4'
