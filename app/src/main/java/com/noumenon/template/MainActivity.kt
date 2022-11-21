@@ -11,9 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.noumenon.common.ui.preview.ThemeDeviceGroupPreview
 import com.noumenon.common.ui.preview.ThemeGroupPreviews
 import com.noumenon.template.ui.theme.AndroidTemplateTheme
 import dagger.hilt.android.AndroidEntryPoint
