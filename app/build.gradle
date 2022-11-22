@@ -65,6 +65,7 @@ dependencies {
   kapt "com.google.dagger:hilt-compiler:2.44"
   // Project Modules
   implementation project(path: ':common-ui')
+  implementation project(path: ':feature:login')
   // Window
   implementation 'androidx.window:window-core:1.1.0-alpha04'
   implementation "androidx.window:window:1.1.0-alpha04"
