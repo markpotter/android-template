@@ -1,19 +1,15 @@
+@file:OptIn(ExperimentalMaterial3WindowSizeClassApi::class, ExperimentalAnimationApi::class)
+
 package com.noumenon.template
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
-import com.noumenon.common.ui.preview.ThemeGroupPreviews
-import com.noumenon.common.ui.theme.AndroidTemplateTheme
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.noumenon.template.navigation.Navigation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,25 +17,9 @@ class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContent {
-      MainScreen("Android")
+      val navController = rememberAnimatedNavController() // hoist the NavController to the top of the composition graph
+      // The content will be managed by the app's NavHost that is configured by our Navigation() composable
+      Navigation(navController = navController, openDrawer = { /*TODO*/ }, windowSize = calculateWindowSizeClass(activity = this))
     }
   }
-}
-
-@Composable
-fun MainScreen(name: String) {
-  val viewModel: MainViewModel = hiltViewModel()
-  val state by viewModel.greeting.collectAsState()
-  AndroidTemplateTheme {
-    // A surface container using the 'background' color from the theme
-    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-      Text(text = "$state $name!")
-    }
-  }
-}
-
-@ThemeGroupPreviews
-@Composable
-fun DefaultPreview() {
-  MainScreen("Android")
 }
