@@ -6,6 +6,9 @@ buildscript {
     androidx_version = '1.9.0'
     espresso_version = '3.5.0'
     accompanist_version = '0.27.0'
+    min_sdk = 28
+    target_sdk = 34
+    compile_sdk = 34
   }
 } // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

@@ -7,12 +7,12 @@ plugins {
 
 android {
   namespace 'com.noumenon.template'
-  compileSdk 33
+  compileSdk compile_sdk
 
   defaultConfig {
     applicationId "com.noumenon.template"
-    minSdk 28
-    targetSdk 33
+    minSdk min_sdk
+    targetSdk target_sdk
     versionCode 1
     versionName "1.0"
 
